@@ -106,10 +106,10 @@
     }
     $scope.printEscCommand = function () {
       var escCommand = Esc.InitializePrinter +
-        Esc.TextAlignRight + "HelloWorld!\n" +
-        Esc.TextAlignCenter + "\u00a3\n" +
-        Esc.TextAlignLeft + "£12.30!\n" +
-        Esc.BoldOn + "HelloWorld!\n" + Esc.BoldOff +
+        Esc.TextAlignRight +"00a3"+" HelloWorld!\n" +
+        Esc.TextAlignCenter +"\u00A3"+ "%C2%A3\n" +
+        Esc.TextAlignLeft + "&#x00A3\n" +
+        Esc.BoldOn +"\201\60\204\65"+ "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleWidth + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleOn + "HelloWorld!\n" + Esc.DoubleOff +
@@ -117,7 +117,7 @@
       print(escCommand);
     }
     $scope.printTscCommand = function () {
-      var tscCommand = Tsc.text(100, 100, "4", 0, 1, 1, "£DEMO FOR TEXT\u00a3") + Tsc.print(1);
+      var tscCommand = Tsc.text(100, 100, "4", 0, 1, 1, "DEMO FOR TEXT") + Tsc.print(1);
       print(tscCommand);
     }
   })
