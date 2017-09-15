@@ -106,8 +106,8 @@
     }
     $scope.printEscCommand = function () {
       var escCommand = Esc.InitializePrinter +
-        Esc.TextAlignRight + "HelloWorld!\n" +
-        Esc.TextAlignCenter + "\x9c\n" +
+        Esc.TextAlignRight + "HelloWorld!\n" +unichr(163)+
+        Esc.TextAlignCenter + "\u00a3\n" +
         Esc.TextAlignLeft + "£12.30!\n" +
         Esc.BoldOn + "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
