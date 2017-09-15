@@ -70,12 +70,12 @@
       $scope.bluetoothDevices.splice(0, $scope.bluetoothDevices.length);
       bluetooth.startScan()
         .then(function (success) {
-          alert("success:" + angular.toJson(success));
+          console.log("success:" + angular.toJson(success));
         }, function (err) {
-          alert(err);
+          console.log(err);
         }, function (device) {
           $scope.bluetoothDevices.push(device);
-          alert(angular.toJson(device));
+          console.log(angular.toJson(device));
         })
         .finally(function () {
           // Stop the ion-refresher from spinning
@@ -107,8 +107,8 @@
     $scope.printEscCommand = function () {
       var escCommand = Esc.InitializePrinter +
         Esc.TextAlignRight + "HelloWorld!\n" +
-        Esc.TextAlignCenter + "HelloWorld!\n" +
-        Esc.TextAlignLeft + "HelloWorld!\n" +
+        Esc.TextAlignCenter + "\x9c\n" +
+        Esc.TextAlignLeft + "£12.30!\n" +
         Esc.BoldOn + "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleWidth + "HelloWorld!\n" + Esc.DoubleOff +
