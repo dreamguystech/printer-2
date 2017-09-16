@@ -106,11 +106,11 @@
       print(content);
     }
     $scope.printEscCommand = function () {
-      var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "£12.30!\n\u%C2%A3\n"+
+      var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "£12.30!\n"+"\%C2%A3\n"+
         Esc.TextAlignRight+"\&#xa3;"+"\n&#163;\n"+"\u00a3"+" HelloWorld!\n" +
         Esc.TextAlignCenter +"\u00A3"+ "%C2%A3\n" +
         Esc.TextAlignLeft + "\81308435\n" +
-        Esc.BoldOn +"\£;"+ "HelloWorld!\n" + Esc.BoldOff +
+        Esc.BoldOn +"£"+ "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleWidth + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleOn + "HelloWorld!\n" + Esc.DoubleOff +
