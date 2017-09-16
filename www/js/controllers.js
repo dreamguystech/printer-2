@@ -97,7 +97,8 @@
       }
     }
     function print(content) {
-      var uint8array = new TextEncoder('gb18030', { NONSTANDARD_allowLegacyEncoding: true }).encode(content);
+     // var uint8array = new TextEncoder('gb18030', { NONSTANDARD_allowLegacyEncoding: true }).encode(content);
+	  var uint8array = new TextEncoder('gb18030').encode(content);
       bluetooth.write(uint8array.buffer, $scope.deviceId);
     }
     $scope.print = function () {
@@ -105,11 +106,11 @@
       print(content);
     }
     $scope.printEscCommand = function () {
-      var escCommand = Esc.InitializePrinter +
-        Esc.TextAlignRight +"00a3"+" HelloWorld!\n" +
+      var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "£12.30!\n\n"+
+        Esc.TextAlignRight+81308435+"\u00a3"+" HelloWorld!\n" +
         Esc.TextAlignCenter +"\u00A3"+ "%C2%A3\n" +
-        Esc.TextAlignLeft + "&#x00A3\n" +
-        Esc.BoldOn +"\201\60\204\65"+ "HelloWorld!\n" + Esc.BoldOff +
+        Esc.TextAlignLeft + "81308435\n" +
+        Esc.BoldOn +"\&pound;"+ "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleWidth + "HelloWorld!\n" + Esc.DoubleOff +
         Esc.DoubleOn + "HelloWorld!\n" + Esc.DoubleOff +
