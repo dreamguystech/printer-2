@@ -100,15 +100,18 @@
      // var uint8array = new TextEncoder('gb18030', { NONSTANDARD_allowLegacyEncoding: true }).encode(content);
 	  var uint8array = new TextEncoder('gb18030').encode(content);
       bluetooth.write(uint8array.buffer, $scope.deviceId);
+	  
+	  var uint8array = new TextEncoder('iso-8859-8').encode(content);
+      bluetooth.write(uint8array.buffer, $scope.deviceId);
     }
     $scope.print = function () {
       var content = "HelloWorld!\n";
       print(content);
     }
     $scope.printEscCommand = function () {
-      var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "£12.30!\n"+"\%C2%A3\n"+
-        Esc.TextAlignRight+"\&#xa3;"+"\n&#163;\n"+"\u00a3"+" HelloWorld!\n" +
-        Esc.TextAlignCenter +"\u00A3"+ "%C2%A3\n" +
+      var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "£12.30!\n"+"\&#169;\n"+
+        Esc.TextAlignRight+"\&#xA3;"+"\n&#xA3;\n"+"\xa3\n"+" HelloWorld!\n" +
+        Esc.TextAlignCenter +"\U+00A3"+ "%C2%A3\n" +
         Esc.TextAlignLeft + "\81308435\n" +
         Esc.BoldOn +"£"+ "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +

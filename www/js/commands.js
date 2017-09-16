@@ -13,7 +13,7 @@ var _EscCommand = (function () {
         this.PrintAndFeedMaxLine = this.ESC + "J" + "\u00FF"; // 打印并走纸 最大255
         this.TextAlignLeft = this.ESC + "a" + "0";
         this.TextAlignCenter = this.ESC + "a" + "1";
-        this.TextAlignRight = this.ESC + "a" + "156";
+        this.TextAlignRight = this.ESC + "a" + "2";
     }
     _EscCommand.prototype.PrintAndFeedLine = function (verticalUnit) {
         if (verticalUnit > 255)
