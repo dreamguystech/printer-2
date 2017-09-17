@@ -111,7 +111,7 @@
     $scope.printEscCommand = function () {
       var escCommand = Esc.InitializePrinter + "\n"+"\u00A3"+"\n" + "$£$12.30$$$!\n"+"\&#169;\n"+
         Esc.TextAlignRight+"\&#xA3;"+"\n&#xA3;\n"+"\xa3\n"+" HelloWorld!\n" +
-        Esc.TextAlignCenter +"\U+00A3"+ "%C2%A3\n" +
+        Esc.TextAlignCenter +"\u0006\U+00A3"+ "%C2%A3\n" +
         Esc.TextAlignLeft + "\81308435\n" +
         Esc.BoldOn +"£"+ "HelloWorld!\n" + Esc.BoldOff +
         Esc.DoubleHeight + "HelloWorld!\n" + Esc.DoubleOff +
